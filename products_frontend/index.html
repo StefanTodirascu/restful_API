@@ -13,7 +13,7 @@
 
 <body class = "bs-body-color">
 
-    <table class="table table-dark table-hover">
+    <table id = "table" class="table table-dark table-hover">
         <thead>
             <tr>
                 <th scope="col">id</th>
@@ -23,8 +23,8 @@
                 <th scope="col">Azioni</th>
             </tr>
         </thead>
-        <tbody>
-            <tr>
+         <tbody id = "tbody">
+            <!--<tr>
                 <th scope="row">1</th>
                 <td>Scarpe</td>
                 <td>159,99</td>
@@ -62,9 +62,13 @@
                     <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-title="Delete">Delete</button>
                   </div>
                 </td>
-            </tr>
+            </tr>-->
         </tbody>
     </table>
+
+    <script src = "js/javascript.js">
+      populateTable();
+    </script> <!-- NB -->
 
     <button type="button" class="btn btn-success">Crea Prodotto</button>
 
@@ -97,7 +101,7 @@
     </div>
   </div>
 </div>
- <script src = "js/javascript.js"></script> <!-- NB -->
+
 
 <!--
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
