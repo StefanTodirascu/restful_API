@@ -4,10 +4,119 @@ var data = [
   { id: "3", nome: "Prodotto 3", prezzo: "$20.99", marca: "Marca Z" }
 ];
 
+var modal = document.getElementById("exampleModal");
+var modalTitle = modal.querySelector(".modal-title");
+var modalBody = modal.querySelector(".modal-body");
 
-document.getElementById("creaProdottoBtn").addEventListener("click", function(){
+document.getElementById("creaProdottoBtn").addEventListener("click", function () {
   populateTable();
 });
+
+
+// Funzione per inserire i dati nella tabella
+function populateTable() {
+  var tbody = document.getElementById("tbody");
+
+  // Itera attraverso i dati e crea una riga per ciascun oggetto
+  data.forEach(function (item) {
+    var row = document.createElement("tr");
+
+    // Inserisci i dati nelle celle della riga
+    row.innerHTML = "<td>" + item.id + "</td>" +
+      "<td>" + item.nome + "</td>" +
+      "<td>" + item.prezzo + "</td>" +
+      "<td>" + item.marca + "</td>" +
+      "<td>" + '<button id="showModalBtn" type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="cambiaModale(\'Show\')">Show</button>' +
+      '<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="cambiaModale(\'Edit\')">Edit</button>' +
+      '<button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="cambiaModale(\'Delete\')">Delete</button>' + "<td>";
+
+    // Aggiungi la riga al corpo della tabella
+    tbody.appendChild(row);// Ottieni riferimenti agli elementi HTML
+    //var modal = document.getElementById("exampleModal");
+    //var modalTitle = modal.querySelector(".modal-title");
+    //var modalBody = modal.querySelector(".modal-body");
+
+    // Quando un bottone con attributo data-title viene cliccato, imposta il titolo del modal con il valore dell'attributo data-title
+    //document.querySelectorAll('[data-title]').forEach(function(button) {
+    // button.addEventListener('click', function() {
+    //  cambiaModale(this.getAttribute('data-title')); //'attributo data-title viene ora ottenuto correttamente 
+  });
+};
+
+
+
+
+
+function cambiaModale(title) {
+modalTitle.innerText = title;
+modalBody.innerHTML = "";
+
+  // Aggiungi il nuovo contenuto in base al titolo
+  switch (title) {
+    case "Show":
+      modalBody.innerHTML = "<p>ID: " + data[0].id + "</p>" +
+        "<p>Nome: " + data[0].nome + "</p>" +
+        "<p>Marca: " + data[0].marca + "</p>" +
+        "<p>Prezzo: " + data[0].prezzo + "</p>";
+      break;
+    case "Delete":
+      modalBody.innerHTML = "<p>Vuoi cancellare questo prodotto?</p>" +
+        "<button type='button' class='btn btn-secondary'>Elimina</button>"
+        ; break;
+    case "Edit":
+      modalBody.innerHTML =
+        "<input type='text' id='productName' class='form-control' placeholder='Nome'><br>" +
+        "<input type='text' id='productBrand' class='form-control'  placeholder='Marca'><br>" +
+        "<input type='number' id='productPrice' class='form-control' placeholder='Prezzo'>"; break;
+  }
+}
+
+
+
+
+
+
+
+/*
+
+// Ottieni riferimenti agli elementi HTML
+var modal = document.getElementById("exampleModal");
+var modalTitle = modal.querySelector(".modal-title");
+var modalBody = modal.querySelector(".modal-body");
+
+// Quando un bottone con attributo data-title viene cliccato, imposta il titolo del modal con il valore dell'attributo data-title
+document.querySelectorAll('[data-title]').forEach(function(button) {
+  button.addEventListener('click', function() {
+    cambiaModale(this.getAttribute('data-title')); //'attributo data-title viene ora ottenuto correttamente 
+  });
+});
+
+function cambiaModale(title){
+  modalTitle.innerText = title;
+  modalBody.innerHTML = ""; 
+
+  // Aggiungi il nuovo contenuto in base al titolo
+  switch(title){
+    case "Show":
+      modalBody.innerHTML = "<p>ID: " + product.id + "</p>" +
+      "<p>Nome: " + product.nome + "</p>" +
+      "<p>Marca: " + product.marca + "</p>" +
+      "<p>Prezzo: " + product.prezzo + "</p>";
+      break;
+    // Altri casi...
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -54,32 +163,31 @@ document.querySelectorAll('[data-title="Show"]').forEach(function(button) {
 
 
 
+*/
 
 
 
 
+/*
+function cambiaModale(title){
+  modalTitle.innerText = title;
+  modalBody.innerHTML = ""; 
 
-// Funzione per inserire i dati nella tabella
-function populateTable() {
-  var tbody = document.getElementById("tbody");
-
-  // Itera attraverso i dati e crea una riga per ciascun oggetto
-  data.forEach(function(item) {
-    var row = document.createElement("tr");
-
-    // Inserisci i dati nelle celle della riga
-    row.innerHTML = "<td>" + item.id + "</td>" +
-                    "<td>" + item.nome + "</td>" +
-                    "<td>" + item.prezzo + "</td>" +
-                    "<td>" + item.marca + "</td>" +
-                    "<td>" + '<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" data-title="Show">Show</button>' +
-                    '<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal" data-title="Edit">Edit</button>' +
-                    '<button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-title="Delete">Delete</button>' + "<td>";
-
-    // Aggiungi la riga al corpo della tabella
-    tbody.appendChild(row);
+  // Aggiungi il nuovo contenuto in base al titolo
+  switch(title){
+    case "btn_Show":
+      modalBody.innerHTML = "<p>ID: " + product.id + "</p>" +
+      "<p>Nome: " + product.nome + "</p>" +
+      "<p>Marca: " + product.marca + "</p>" +
+      "<p>Prezzo: " + product.prezzo + "</p>";
+      break;
+    // Altri casi...
+  }
+}
+hild(row);
 
 
     
   });
 }
+*/
