@@ -67,7 +67,8 @@ modalBody.innerHTML = "";
       modalBody.innerHTML =
         "<input type='text' id='productName' class='form-control' placeholder='Nome'><br>" +
         "<input type='text' id='productBrand' class='form-control'  placeholder='Marca'><br>" +
-        "<input type='number' id='productPrice' class='form-control' placeholder='Prezzo'>"; break;
+        "<input type='number' id='productPrice' class='form-control' placeholder='Prezzo'>"+
+        "<button type='button' class='btn btn-secondary'>Save</button>"; break;
   }
 }
 
