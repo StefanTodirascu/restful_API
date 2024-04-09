@@ -61,6 +61,7 @@ function handleRequest()
 addRoute('GET', '/products', function () {
     header("Location: /products");
     header('Content-Type: application/vnd.api+json');
+    header("Access-Control-Allow-Origin: *");
 
     if (!$products = Product::getProducts()) {
         http_response_code(500); //server error
