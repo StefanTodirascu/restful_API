@@ -1,66 +1,8 @@
-var data = [
+/*var data = [
   { id: "1", nome: "Prodotto 1", prezzo: "$10.99", marca: "Marca X" },
   { id: "2", nome: "Prodotto 2", prezzo: "$15.99", marca: "Marca Y" },
   { id: "3", nome: "Prodotto 3", prezzo: "$20.99", marca: "Marca Z" }
-];
-
-
-var json = {
-  "data": [
-      {
-          "type": "products",
-          "id": 1,
-          "attributes": {
-              "nome": "Tosaerba",
-              "marca": "Oleomac",
-              "prezzo": 289.99
-          }
-      },
-      {
-          "type": "products",
-          "id": 2,
-          "attributes": {
-              "nome": "Vaso",
-              "marca": "Villeroy e Boch",
-              "prezzo": 9.99
-          }
-      },
-      {
-          "type": "products",
-          "id": 3,
-          "attributes": {
-              "nome": "Personal computer",
-              "marca": "MSI",
-              "prezzo": 1799.99
-          }
-      },
-      {
-          "type": "products",
-          "id": 4,
-          "attributes": {
-              "nome": "Bibbia",
-              "marca": "San paolo",
-              "prezzo": 15
-          }
-      }]};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+];*/
 
 
 var modal = document.getElementById("exampleModal");
@@ -68,9 +10,8 @@ var modalTitle = modal.querySelector(".modal-title");
 var modalBody = modal.querySelector(".modal-body");
 
 document.getElementById("creaProdottoBtn").addEventListener("click", function () {
-  //populateTable();
-  generateTableRows(json.data);
 });
+
 
 
 // Funzione per inserire i dati nella tabella
@@ -90,16 +31,7 @@ function populateTable() {
       '<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="cambiaModale(\'Edit\')">Edit</button>' +
       '<button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="cambiaModale(\'Delete\')">Delete</button>' + "<td>";
 
-    // Aggiungi la riga al corpo della tabella
     tbody.appendChild(row);// Ottieni riferimenti agli elementi HTML
-    //var modal = document.getElementById("exampleModal");
-    //var modalTitle = modal.querySelector(".modal-title");
-    //var modalBody = modal.querySelector(".modal-body");
-
-    // Quando un bottone con attributo data-title viene cliccato, imposta il titolo del modal con il valore dell'attributo data-title
-    //document.querySelectorAll('[data-title]').forEach(function(button) {
-    // button.addEventListener('click', function() {
-    //  cambiaModale(this.getAttribute('data-title')); //'attributo data-title viene ora ottenuto correttamente 
   });
 };
 
@@ -135,7 +67,7 @@ modalBody.innerHTML = "";
 
 
   // Funzione per generare le righe della tabella
-  function generateTableRows(data) {
+  /*function generateTableRows() {
     var tbody = document.querySelector("#tbody");
 
     data.forEach(function(product) {
@@ -153,6 +85,6 @@ modalBody.innerHTML = "";
 
       tbody.appendChild(row);
     });
-  }
+  }*/
 
   // Chiamata alla funzione per generare le righe della tabella con i dati JSON forniti
